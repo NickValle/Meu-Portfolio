@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio da Nicole Vale — desenvolvedora front-end">
   <title>Nicole Vale ✦ Portfolio</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+
 
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -20,153 +20,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Press+Start+2P&display=swap"
     rel="stylesheet">
 
 
-  <style type="text/tailwindcss">
-    @theme {
-            --font-display: "Archivo Black", "Arial Black", sans-serif;
-            --font-body: "Work Sans", system-ui, sans-serif;
-        }
-    </style>
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
-    ::selection {
-      background: #f472b6;
-      color: #1c1b21;
-    }
-
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #131218;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #33313d;
-      border-radius: 8px;
-    }
-
-
-    .marquee {
-      overflow: hidden;
-      cursor: grab;
-      user-select: none;
-      -webkit-user-select: none;
-      touch-action: pan-y;
-
-      -webkit-touch-callout: none;
-    }
-
-    .marquee,
-    .marquee * {
-      touch-action: pan-y;
-    }
-
-    .marquee.dragging {
-      cursor: grabbing;
-    }
-
-    .marquee.dragging .gallery-card img {
-      transform: none;
-    }
-
-    .marquee img {
-      -webkit-user-drag: none;
-      pointer-events: none;
-    }
-
-    .marquee-track,
-    .marquee-set {
-      will-change: transform;
-    }
-
-
-    .site-nav {
-      display: none;
-    }
-
-    @media (min-width: 768px) {
-      .site-nav {
-        display: flex;
-        align-items: center;
-        gap: 1.75rem;
-      }
-    }
-
-    .site-nav.open {
-      display: flex;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: .25rem;
-      padding: 1rem 1.5rem 1.5rem;
-      background: rgba(28, 27, 33, .97);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, .09);
-    }
-
-    .site-nav.open a {
-      padding: .6rem 0;
-      font-size: 1rem;
-    }
-
-    .menu-toggle span {
-      transition: .25s;
-    }
-
-    .menu-toggle[aria-expanded="true"] span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .menu-toggle[aria-expanded="true"] span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-
-    @keyframes float-sparkle {
-
-      0%,
-      100% {
-        transform: translateY(0) rotate(0deg);
-      }
-
-      50% {
-        transform: translateY(-14px) rotate(14deg);
-      }
-    }
-
-    .sparkle-anim {
-      animation: float-sparkle 6s ease-in-out infinite;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      .sparkle-anim {
-        animation: none;
-      }
-    }
-  </style>
 </head>
 
-<body id="top" class=" overflow-x-clip bg-[#1c1b21] font-body text-[#f4f2f5] antialiased">
+<body id="top" class="overflow-x-clip bg-[#1c1b21] text-[#f4f2f5] antialiased">
+
+  <div id="scroll-progress" aria-hidden="true"></div>
 
   <header class="sticky top-0 z-50 border-b border-white/10 bg-[#1c1b21]/85 backdrop-blur-md">
     <div class="mx-auto flex h-[68px] max-w-6xl items-center justify-between px-6">
@@ -193,8 +56,8 @@
   </header>
 
   <main>
-    <section class="relative pt-14 pb-16 text-center md:pt-24">
-      <div class="relative mx-auto max-w-5xl px-6">
+    <section class="relative pt-40 pb-40 text-center">
+      <div class="relative mx-auto max-w-7xl px-6">
         <span class="sparkle-anim absolute pointer-events-none text-pink-400"
           style="left: 4%; top: 10%; width: 30px; height: 30px;">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -220,18 +83,21 @@
           </svg>
         </span>
 
-        <span class=" reveal inline-block -rotate-3 rounded-full bg-blue-400 px-5 py-1.5 font-display text-xs uppercase tracking-widest text-[#14131a]">
+        <span
+          class=" reveal press-start-2p inline-block -rotate-3 rounded-full bg-[#add2ff] px-5 py-1.5 font-display text-xs uppercase tracking-widest text-[#14131a]">
           OIIIIEEE
         </span>
 
         <h1
-          class="mt-8 flex items-center justify-center gap-x-6 gap-y-3 font-display text-4xl uppercase leading-tight text-white sm:text-6xl">
-          <span class="reveal">EU SOU</span>
-          <span class="reveal -rotate-3 rounded-full bg-pink-400 px-6 py-1.5 text-[#1c1b21] sm:px-8 sm:py-2">NICOLE</span>
-          <span class="reveal rotate-2 rounded-full bg-yellow-200 px-6 py-1.5 text-[#1c1b21] sm:px-8 sm:py-2">vale</span>
+          class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 font-display  uppercase leading-tight text-white">
+          <span class="reveal press-start-2p text-2xl sm:text-5xl">EU SOU</span>
+          <span
+            class="reveal press-start-2p text-2xl sm:text-5xl -rotate-3 rounded-full bg-[#f9a8c9] px-6 py-4 text-[#1c1b21] sm:px-8 sm:py-2">NICOLE</span>
+          <span
+            class="reveal press-start-2p text-2xl sm:text-5xl rotate-2 rounded-full bg-[#fee073] px-6 py-4 text-[#1c1b21] sm:px-8 sm:py-2">vale</span>
         </h1>
 
-        <p class="mx-auto mt-18 max-w-xl text-base leading-relaxed text-[#9b97a5]">
+        <p class="mx-auto mt-18 max-w-xl text-base text-[#9b97a5] nunito-sans">
           Seja bem-vindo(a) ao meu portfólio <br> Aqui você encontrará meus projetos, habilidades e um pouco sobre mim
 
       </div>
@@ -309,104 +175,202 @@
       </div>
     </section>
 
-    <section class="scroll-mt-24 py-16 md:py-24" id="projetos">
+    <section class="scroll-mt-24 pb-40 pt-40" id="projetos">
       <div class=" mx-auto max-w-2xl px-6 text-center">
         <p class="text-xs font-semibold uppercase tracking-[.24em] text-[#9b97a5]">
-          <i class="animate__slideInDown not-italic text-pink-400">✦</i> projetos
+          <i class=" not-italic text-pink-400">✦</i> projetos
         </p>
-        <h2 class="mt-3 font-display text-3xl uppercase text-white sm:text-5xl">PROJETOS MAIS INTERESSANTES</h2>
+        <h2 class="font-black mt-3 font-display text-3xl uppercase text-white sm:text-5xl">PROJETOS MAIS INTERESSANTES</h2>
         <p class="mt-4 text-[#9b97a5]">arraste pra ver mais</p>
       </div>
 
       <div class="marquee mt-12" data-speed="65" aria-label="Galeria de projetos">
         <div class="marquee-track flex w-max gap-6">
-          <div class="marquee-set flex flex-none gap-6">
+          <div class="marquee-set flex flex-none items-stretch gap-6">
             <figure
-              class="gallery-card relative aspect-[3/4] w-[clamp(210px,26vw,300px)] flex-none overflow-hidden rounded-[20px] bg-[#26252e]">
-              <img class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                src="https://picsum.photos/seed/proj1/600/800" alt="Projeto 01" loading="lazy" draggable="false">
-              <figcaption
-                class="absolute inset-x-0 bottom-0 flex flex-col items-start gap-2 bg-gradient-to-t from-black/75 to-transparent p-4">
-                <span
-                  class="rounded-full bg-pink-400/90 px-3 py-1 text-[.68rem] font-extrabold uppercase tracking-widest text-[#1c1b21]">web</span>
-                <h3 class="text-base font-bold">Projeto 01</h3>
+              class="gallery-card flex w-[clamp(330px,34vw,600px)] flex-none flex-col overflow-hidden rounded-[20px] border border-white/10 bg-[#26252e]">
+              <div class="aspect-[16/10] shrink-0 overflow-hidden">
+                <img class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  src="https://picsum.photos/seed/proj1/600/800" alt="Doces da Lua" loading="lazy" draggable="false">
+              </div>
+              <figcaption class="flex flex-1 flex-col items-start gap-2.5 p-4">
+                <h3 class="text-base font-bold">Doces da Lua</h3>
+                <p class="line-clamp-2 text-[.78rem] leading-snug text-[#9b97a5]">Landing page de confeitaria com
+                  visual retrô e animações fofas.</p>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="tech-chip tech-dot-html">HTML</span>
+                  <span class="tech-chip tech-dot-css">CSS</span>
+                  <span class="tech-chip tech-dot-js">JavaScript</span>
+                </div>
+                <div class="mt-auto flex w-full gap-2 pt-1.5">
+                  <a href="#" class="card-btn card-btn-primary flex-1">ver projeto</a>
+                  <a href="#" aria-label="GitHub de Doces da Lua"
+                    class="card-btn card-btn-ghost"><i class="bx bxl-github text-sm leading-none"
+                      aria-hidden="true"></i>GitHub</a>
+                </div>
               </figcaption>
             </figure>
             <figure
-              class="gallery-card relative aspect-[3/4] w-[clamp(210px,26vw,300px)] flex-none overflow-hidden rounded-[20px] bg-[#26252e]">
-              <img class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                src="https://picsum.photos/seed/proj2/600/800" alt="Projeto 02" loading="lazy" draggable="false">
-              <figcaption
-                class="absolute inset-x-0 bottom-0 flex flex-col items-start gap-2 bg-gradient-to-t from-black/75 to-transparent p-4">
-                <span
-                  class="rounded-full bg-pink-400/90 px-3 py-1 text-[.68rem] font-extrabold uppercase tracking-widest text-[#1c1b21]">app</span>
-                <h3 class="text-base font-bold">Projeto 02</h3>
+              class="gallery-card flex w-[clamp(330px,34vw,600px)] flex-none flex-col overflow-hidden rounded-[20px] border border-white/10 bg-[#26252e]">
+              <div class="aspect-[16/10] shrink-0 overflow-hidden">
+                <img class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  src="https://picsum.photos/seed/proj2/600/800" alt="Pomodoro Pixel" loading="lazy" draggable="false">
+              </div>
+              <figcaption class="flex flex-1 flex-col items-start gap-2.5 p-4">
+                <h3 class="text-base font-bold">Pomodoro Pixel</h3>
+                <p class="line-clamp-2 text-[.78rem] leading-snug text-[#9b97a5]">Timer de foco com sons relaxantes e
+                  tema claro/escuro.</p>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="tech-chip tech-dot-html">HTML</span>
+                  <span class="tech-chip tech-dot-css">CSS</span>
+                  <span class="tech-chip tech-dot-js">JavaScript</span>
+                </div>
+                <div class="mt-auto flex w-full gap-2 pt-1.5">
+                  <a href="#" class="card-btn card-btn-primary flex-1">ver projeto</a>
+                  <a href="#" aria-label="GitHub de Pomodoro Pixel"
+                    class="card-btn card-btn-ghost"><i class="bx bxl-github text-sm leading-none"
+                      aria-hidden="true"></i>GitHub</a>
+                </div>
               </figcaption>
             </figure>
             <figure
-              class="gallery-card relative aspect-[3/4] w-[clamp(210px,26vw,300px)] flex-none overflow-hidden rounded-[20px] bg-[#26252e]">
-              <img class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                src="https://picsum.photos/seed/proj3/600/800" alt="Projeto 03" loading="lazy" draggable="false">
-              <figcaption
-                class="absolute inset-x-0 bottom-0 flex flex-col items-start gap-2 bg-gradient-to-t from-black/75 to-transparent p-4">
-                <span
-                  class="rounded-full bg-pink-400/90 px-3 py-1 text-[.68rem] font-extrabold uppercase tracking-widest text-[#1c1b21]">ui</span>
-                <h3 class="text-base font-bold">Projeto 03</h3>
+              class="gallery-card flex w-[clamp(330px,34vw,600px)] flex-none flex-col overflow-hidden rounded-[20px] border border-white/10 bg-[#26252e]">
+              <div class="aspect-[16/10] shrink-0 overflow-hidden">
+                <img class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  src="https://picsum.photos/seed/proj3/600/800" alt="Galeria de Memes" loading="lazy" draggable="false">
+              </div>
+              <figcaption class="flex flex-1 flex-col items-start gap-2.5 p-4">
+                <h3 class="text-base font-bold">Galeria de Memes</h3>
+                <p class="line-clamp-2 text-[.78rem] leading-snug text-[#9b97a5]">Galeria responsiva com filtros, busca
+                  e modo aleatório.</p>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="tech-chip tech-dot-react">React</span>
+                  <span class="tech-chip tech-dot-css">CSS</span>
+                  <span class="tech-chip tech-dot-js">JavaScript</span>
+                </div>
+                <div class="mt-auto flex w-full gap-2 pt-1.5">
+                  <a href="#" class="card-btn card-btn-primary flex-1">ver projeto</a>
+                  <a href="#" aria-label="GitHub de Galeria de Memes"
+                    class="card-btn card-btn-ghost"><i class="bx bxl-github text-sm leading-none"
+                      aria-hidden="true"></i>GitHub</a>
+                </div>
               </figcaption>
             </figure>
             <figure
-              class="gallery-card relative aspect-[3/4] w-[clamp(210px,26vw,300px)] flex-none overflow-hidden rounded-[20px] bg-[#26252e]">
-              <img class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                src="https://picsum.photos/seed/proj4/600/800" alt="Projeto 04" loading="lazy" draggable="false">
-              <figcaption
-                class="absolute inset-x-0 bottom-0 flex flex-col items-start gap-2 bg-gradient-to-t from-black/75 to-transparent p-4">
-                <span
-                  class="rounded-full bg-pink-400/90 px-3 py-1 text-[.68rem] font-extrabold uppercase tracking-widest text-[#1c1b21]">branding</span>
-                <h3 class="text-base font-bold">Projeto 04</h3>
+              class="gallery-card flex w-[clamp(330px,34vw,600px)] flex-none flex-col overflow-hidden rounded-[20px] border border-white/10 bg-[#26252e]">
+              <div class="aspect-[16/10] shrink-0 overflow-hidden">
+                <img class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  src="https://picsum.photos/seed/proj4/600/800" alt="Agenda Lunar" loading="lazy" draggable="false">
+              </div>
+              <figcaption class="flex flex-1 flex-col items-start gap-2.5 p-4">
+                <h3 class="text-base font-bold">Agenda Lunar</h3>
+                <p class="line-clamp-2 text-[.78rem] leading-snug text-[#9b97a5]">Planejador semanal com arrastar e
+                  soltar e persistência local.</p>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="tech-chip tech-dot-react">React</span>
+                  <span class="tech-chip tech-dot-css">CSS</span>
+                  <span class="tech-chip tech-dot-js">JavaScript</span>
+                </div>
+                <div class="mt-auto flex w-full gap-2 pt-1.5">
+                  <a href="#" class="card-btn card-btn-primary flex-1">ver projeto</a>
+                  <a href="#" aria-label="GitHub de Agenda Lunar"
+                    class="card-btn card-btn-ghost"><i class="bx bxl-github text-sm leading-none"
+                      aria-hidden="true"></i>GitHub</a>
+                </div>
               </figcaption>
             </figure>
             <figure
-              class="gallery-card relative aspect-[3/4] w-[clamp(210px,26vw,300px)] flex-none overflow-hidden rounded-[20px] bg-[#26252e]">
-              <img class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                src="https://picsum.photos/seed/proj5/600/800" alt="Projeto 05" loading="lazy" draggable="false">
-              <figcaption
-                class="absolute inset-x-0 bottom-0 flex flex-col items-start gap-2 bg-gradient-to-t from-black/75 to-transparent p-4">
-                <span
-                  class="rounded-full bg-pink-400/90 px-3 py-1 text-[.68rem] font-extrabold uppercase tracking-widest text-[#1c1b21]">web</span>
-                <h3 class="text-base font-bold">Projeto 05</h3>
+              class="gallery-card flex w-[clamp(330px,34vw,600px)] flex-none flex-col overflow-hidden rounded-[20px] border border-white/10 bg-[#26252e]">
+              <div class="aspect-[16/10] shrink-0 overflow-hidden">
+                <img class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  src="https://picsum.photos/seed/proj5/600/800" alt="Clima Agora" loading="lazy" draggable="false">
+              </div>
+              <figcaption class="flex flex-1 flex-col items-start gap-2.5 p-4">
+                <h3 class="text-base font-bold">Clima Agora</h3>
+                <p class="line-clamp-2 text-[.78rem] leading-snug text-[#9b97a5]">Dashboard de clima consumindo API em
+                  tempo real.</p>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="tech-chip tech-dot-html">HTML</span>
+                  <span class="tech-chip tech-dot-css">CSS</span>
+                  <span class="tech-chip tech-dot-js">JavaScript</span>
+                </div>
+                <div class="mt-auto flex w-full gap-2 pt-1.5">
+                  <a href="#" class="card-btn card-btn-primary flex-1">ver projeto</a>
+                  <a href="#" aria-label="GitHub de Clima Agora"
+                    class="card-btn card-btn-ghost"><i class="bx bxl-github text-sm leading-none"
+                      aria-hidden="true"></i>GitHub</a>
+                </div>
               </figcaption>
             </figure>
             <figure
-              class="gallery-card relative aspect-[3/4] w-[clamp(210px,26vw,300px)] flex-none overflow-hidden rounded-[20px] bg-[#26252e]">
-              <img class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                src="https://picsum.photos/seed/proj6/600/800" alt="Projeto 06" loading="lazy" draggable="false">
-              <figcaption
-                class="absolute inset-x-0 bottom-0 flex flex-col items-start gap-2 bg-gradient-to-t from-black/75 to-transparent p-4">
-                <span
-                  class="rounded-full bg-pink-400/90 px-3 py-1 text-[.68rem] font-extrabold uppercase tracking-widest text-[#1c1b21]">app</span>
-                <h3 class="text-base font-bold">Projeto 06</h3>
+              class="gallery-card flex w-[clamp(330px,34vw,600px)] flex-none flex-col overflow-hidden rounded-[20px] border border-white/10 bg-[#26252e]">
+              <div class="aspect-[16/10] shrink-0 overflow-hidden">
+                <img class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  src="https://picsum.photos/seed/proj6/600/800" alt="Quiz das Estrelas" loading="lazy"
+                  draggable="false">
+              </div>
+              <figcaption class="flex flex-1 flex-col items-start gap-2.5 p-4">
+                <h3 class="text-base font-bold">Quiz das Estrelas</h3>
+                <p class="line-clamp-2 text-[.78rem] leading-snug text-[#9b97a5]">Quiz interativo com placar, timer e
+                  perguntas embaralhadas.</p>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="tech-chip tech-dot-html">HTML</span>
+                  <span class="tech-chip tech-dot-css">CSS</span>
+                  <span class="tech-chip tech-dot-js">JavaScript</span>
+                </div>
+                <div class="mt-auto flex w-full gap-2 pt-1.5">
+                  <a href="#" class="card-btn card-btn-primary flex-1">ver projeto</a>
+                  <a href="#" aria-label="GitHub de Quiz das Estrelas"
+                    class="card-btn card-btn-ghost"><i class="bx bxl-github text-sm leading-none"
+                      aria-hidden="true"></i>GitHub</a>
+                </div>
               </figcaption>
             </figure>
             <figure
-              class="gallery-card relative aspect-[3/4] w-[clamp(210px,26vw,300px)] flex-none overflow-hidden rounded-[20px] bg-[#26252e]">
-              <img class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                src="https://picsum.photos/seed/proj7/600/800" alt="Projeto 07" loading="lazy" draggable="false">
-              <figcaption
-                class="absolute inset-x-0 bottom-0 flex flex-col items-start gap-2 bg-gradient-to-t from-black/75 to-transparent p-4">
-                <span
-                  class="rounded-full bg-pink-400/90 px-3 py-1 text-[.68rem] font-extrabold uppercase tracking-widest text-[#1c1b21]">ui</span>
-                <h3 class="text-base font-bold">Projeto 07</h3>
+              class="gallery-card flex w-[clamp(330px,34vw,600px)] flex-none flex-col overflow-hidden rounded-[20px] border border-white/10 bg-[#26252e]">
+              <div class="aspect-[16/10] shrink-0 overflow-hidden">
+                <img class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  src="https://picsum.photos/seed/proj7/600/800" alt="Receitas da Vó" loading="lazy" draggable="false">
+              </div>
+              <figcaption class="flex flex-1 flex-col items-start gap-2.5 p-4">
+                <h3 class="text-base font-bold">Receitas da Vó</h3>
+                <p class="line-clamp-2 text-[.78rem] leading-snug text-[#9b97a5]">Site de receitas com modo escuro e
+                  favoritos salvos.</p>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="tech-chip tech-dot-html">HTML</span>
+                  <span class="tech-chip tech-dot-tailwind">Tailwind</span>
+                  <span class="tech-chip tech-dot-js">JavaScript</span>
+                </div>
+                <div class="mt-auto flex w-full gap-2 pt-1.5">
+                  <a href="#" class="card-btn card-btn-primary flex-1">ver projeto</a>
+                  <a href="#" aria-label="GitHub de Receitas da Vó"
+                    class="card-btn card-btn-ghost"><i class="bx bxl-github text-sm leading-none"
+                      aria-hidden="true"></i>GitHub</a>
+                </div>
               </figcaption>
             </figure>
             <figure
-              class="gallery-card relative aspect-[3/4] w-[clamp(210px,26vw,300px)] flex-none overflow-hidden rounded-[20px] bg-[#26252e]">
-              <img class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                src="https://picsum.photos/seed/proj8/600/800" alt="Projeto 08" loading="lazy" draggable="false">
-              <figcaption
-                class="absolute inset-x-0 bottom-0 flex flex-col items-start gap-2 bg-gradient-to-t from-black/75 to-transparent p-4">
-                <span
-                  class="rounded-full bg-pink-400/90 px-3 py-1 text-[.68rem] font-extrabold uppercase tracking-widest text-[#1c1b21]">branding</span>
-                <h3 class="text-base font-bold">Projeto 08</h3>
+              class="gallery-card flex w-[clamp(330px,34vw,600px)] flex-none flex-col overflow-hidden rounded-[20px] border border-white/10 bg-[#26252e]">
+              <div class="aspect-[16/10] shrink-0 overflow-hidden">
+                <img class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  src="https://picsum.photos/seed/proj8/600/800" alt="Jogo da Memória" loading="lazy"
+                  draggable="false">
+              </div>
+              <figcaption class="flex flex-1 flex-col items-start gap-2.5 p-4">
+                <h3 class="text-base font-bold">Jogo da Memória</h3>
+                <p class="line-clamp-2 text-[.78rem] leading-snug text-[#9b97a5]">Jogo de memória com ranking local e
+                  modo difícil.</p>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="tech-chip tech-dot-react">React</span>
+                  <span class="tech-chip tech-dot-css">CSS</span>
+                  <span class="tech-chip tech-dot-js">JavaScript</span>
+                </div>
+                <div class="mt-auto flex w-full gap-2 pt-1.5">
+                  <a href="#" class="card-btn card-btn-primary flex-1">ver projeto</a>
+                  <a href="#" aria-label="GitHub de Jogo da Memória"
+                    class="card-btn card-btn-ghost"><i class="bx bxl-github text-sm leading-none"
+                      aria-hidden="true"></i>GitHub</a>
+                </div>
               </figcaption>
             </figure>
           </div>
@@ -414,7 +378,7 @@
       </div>
     </section>
 
-    <section class="scroll-mt-24 py-16 md:py-24 bg-purple-400 rounded-[40px] mx-auto max-w-7xl px-30" id="sobre">
+    <section class="scroll-mt-24 py-16 md:py-24 bg-[#c8d991] rounded-[40px] mx-auto max-w-6xl px-6 md:px-30" id="sobre">
       <div class="">
         <div class="reveal grid gap-10 md:grid-cols-2 md:gap-16">
           <div>
@@ -422,7 +386,7 @@
               <h2 class=" font-display text-3xl uppercase text-[#1c1b21] sm:text-5xl">UM POUQINHO SOBRE MIM</h2>
             </div>
             <p class=" leading-relaxed text-[#1c1b21] py-8">
-              Sou uma desenvolvedora front-end apaixonada por criar experiências digitais envolventes
+              Sou uma desenvolvedora fullstack apaixonada por criar experiências digitais envolventes
               e funcionais. Com habilidades em HTML, CSS, JavaScript e frameworks modernos, busco
               transformar ideias em interfaces intuitivas e responsivas.
             </p>
@@ -454,69 +418,63 @@
           </div>
           <div>
             <img class="rotate-4 mx-auto max-h-120 rounded-2xl object-cover"
-              src="https://picsum.photos/seed/sobre/600/800" alt="Foto da Nicole Vale" loading="lazy">
+              src="./img/eu.jpeg" alt="Foto da Nicole Vale" loading="lazy">
           </div>
         </div>
       </div>
     </section>
 
     <section class="scroll-mt-24 py-16 md:py-24" id="besteirinhas">
-      <div class="mx-auto max-w-6xl px-6">
+      <div class="mx-auto max-w-7xl px-6">
         <div class="reveal mx-auto max-w-2xl text-center">
           <p class="text-xs font-semibold uppercase tracking-[.24em] text-[#9b97a5]">
             <i class="not-italic text-pink-400">✦</i> besteirinhas
           </p>
-          <h2 class="mt-3 font-display text-3xl uppercase text-white sm:text-5xl">BESTEIRINHAS</h2>
+          <h2 class="mt-3 font-black text-3xl uppercase text-white sm:text-5xl">um pouco sobre mim</h2>
           <p class="mt-4 text-[#9b97a5]">coisinhas aleatórias que eu gosto</p>
         </div>
-        <div class="reveal group mt-12 flex flex-wrap justify-center gap-10 text-[#1c1b21]">
+        <div class="reveal group mt-12 flex text-center flex-wrap justify-center gap-10 text-[#1c1b21]">
           <div
-            class="inline-flex flex-col -rotate-4 items-center gap-2 rounded-[40px] bg-[#f9a8c9] px-9 py-6 text-lg font-medium transition-transform duration-300 group-hover:rotate-0 ">
-            <p>teste</p>
-            <p class=" text-[#9b97a5]">Coisinhas que eu gosto</p>
+            class="inline-flex flex-col -rotate-4 items-center justify-center gap-2 rounded-[40px] bg-[#f9a8c9] px-9 py-6 text-lg font-medium ">
+            <p class="font-black">JOGOS FAVORITOS</p>
+            <p class="font-normal">GROUNDED, <br> BATMAN ARKHAM KNIGHT, <br> HOLLOW KNIGHT, <br> VÁRIOS OUTROS MAS NÃO <br> LEMBRO AGORA KKSKS</p>
           </div>
           <div
-            class="inline-flex flex-col rotate-2 items-center gap-2 rounded-[40px]  bg-[#fee073] px-9 py-6 text-lg font-medium transition-transform duration-300 group-hover:rotate-0 ">
-            <p>teste</p>
-            <p class=" text-[#9b97a5]">Coisinhas que eu gosto</p>
-            </div>
+            class="inline-flex flex-col rotate-2 items-center justify-center gap-2 rounded-[40px]  bg-[#fee073] px-9 py-6 text-lg font-medium  ">
+            <p class="font-black">ESTILO MUSICAL</p>
+            <p class="font-normal">ROCK, POP, <br> MPB E UM <br> POUCO DE TUDO</p>
+          </div>
           <div
-            class="inline-flex flex-col -rotate-2 items-center gap-2 rounded-[40px]  bg-[#add2ff] px-9 py-6 text-lg font-medium transition-transform duration-300 group-hover:rotate-0 ">
-            <p>teste</p>
-            <p class=" text-[#9b97a5]">Coisinhas que eu gosto</p></div>
+            class="inline-flex flex-col -rotate-10 items-center justify-center gap-2 rounded-[40px]  bg-[#add2ff] px-9 py-6 text-lg font-medium  ">
+            <p class="font-black">LIVROS</p>
+            <p class="font-normal">EU AMO LITERATURA <br> GOTICA E FICÇÃO</p>
+          </div>
           <div
-            class="inline-flex flex-col rotate-8 items-center gap-2 rounded-[40px]  bg-[#def2a4] px-9 py-6 text-lg font-medium transition-transform duration-300 group-hover:rotate-0 ">
-            <p>teste</p>
-            <p class=" text-[#9b97a5]">Coisinhas que eu gosto</p></div>
+            class="inline-flex flex-col rotate-8 items-center justify-center gap-2 rounded-[40px]  bg-[#c8d991] px-9 py-6 text-lg font-medium  ">
+            <p class="font-black">TRAMPOS EXTRAS</p>
+            <p class="font-normal">TRABALHO COMO PROJETISTA <br> E DESIGNER GRAFICO</p>
+          </div>
           <div
-            class="inline-flex flex-col rotate-1 items-center gap-2 rounded-[40px]  bg-[#fef8d4] px-9 py-6 text-lg font-medium transition-transform duration-300 group-hover:rotate-0 ">
-            <p>teste</p>
-            <p class=" text-[#9b97a5]">Coisinhas que eu gosto</p></div>
+            class="inline-flex flex-col -rotate-8 items-center justify-center gap-2 rounded-[40px]  bg-[#fef8d4] px-9 py-6 text-lg font-medium  ">
+            <p class="font-black">COISAS MISTICAS</p>
+            <p class="font-normal">TARÔ, LUA, ASTROLOGIA E <br> ESSAS COISINHAS QUE <br> DESPERTAM MINHA CURIOSIDADE</p>
+          </div>
+
           <div
-            class="inline-flex flex-col rotate-2 items-center gap-2 rounded-[40px]  bg-[#e2c1ff] px-9 py-6 text-lg font-medium transition-transform duration-300 group-hover:rotate-0 ">
-            <p>teste</p>
-            <p class=" text-[#9b97a5]">Coisinhas que eu gosto</p></div>
-            <div
-            class="inline-flex flex-col -rotate-1 items-center gap-2 rounded-[40px]  bg-[#e2c1ff] px-9 py-6 text-lg font-medium transition-transform duration-300 group-hover:rotate-0 ">
-            <p>teste</p>
-            <p class=" text-[#9b97a5]">Coisinhas que eu gosto</p></div>
-            <div
-            <div
-            class="inline-flex flex-col rotate-3 items-center gap-2 rounded-[40px]  bg-[#e2c1ff] px-9 py-6 text-lg font-medium transition-transform duration-300 group-hover:rotate-0 ">
-            <p>teste</p>
-            <p class=" text-[#9b97a5]">Coisinhas que eu gosto</p></div>
-            <div
-            class="inline-flex flex-col -rotate-3 items-center gap-2 rounded-[40px]  bg-[#e2c1ff] px-9 py-6 text-lg font-medium transition-transform duration-300 group-hover:rotate-0 ">
-            <p>teste</p>
-            <p class=" text-[#9b97a5]">Coisinhas que eu gosto</p></div>
-            <div
-            class="inline-flex flex-col -rotate-1 items-center gap-2 rounded-[40px]  bg-[#e2c1ff] px-9 py-6 text-lg font-medium transition-transform duration-300 group-hover:rotate-0 ">
-            <p>teste</p>
-            <p class=" text-[#9b97a5]">Coisinhas que eu gosto</p></div>
-            <div
-            class="inline-flex flex-col rotate-2 items-center gap-2 rounded-[40px]  bg-[#e2c1ff] px-9 py-6 text-lg font-medium transition-transform duration-300 group-hover:rotate-0 ">
-            <p>teste</p>
-            <p class=" text-[#9b97a5]">Coisinhas que eu gosto</p></div>
+            class="inline-flex flex-col rotate-8 items-center justify-center gap-2 rounded-[40px]  bg-[#e2c1ff] px-9 py-6 text-lg font-medium  ">
+            <p class="font-black">FILMES & SÉRIES</p>
+            <p class="font-normal">GOSTO DE SUSPENSE, TERROR E FICÇÃO</p>
+          </div>
+          <div
+            class="inline-flex flex-col -rotate-1 items-center justify-center gap-2 rounded-[40px]  bg-[#add2ff] px-9 py-6 text-lg font-medium  ">
+            <p class="font-black">CRIATIVIDADE</p>
+            <p class="font-normal">AMO DESENHAR E CRIAR LAYOUTS</p>
+          </div>
+          <div
+            class="inline-flex flex-col rotate-8 items-center justify-center gap-2 rounded-[40px]  bg-[#f9a8c9] px-9 py-6 text-lg font-medium ">
+            <p class="font-black">VIAGENS</p>
+            <p class="font-normal">EU AMO VIAJAR E GUARDAR <br> CADA MOMENTO DA VIAGEM SEM CELULAR</p>
+          </div>
         </div>
       </div>
     </section>
@@ -525,42 +483,81 @@
       <div class="mx-auto max-w-6xl px-6">
         <div class="reveal mx-auto max-w-2xl text-center">
           <p class="text-xs font-semibold uppercase tracking-[.24em] text-[#9b97a5]">
-            <i class="not-italic text-pink-400"></i> certificados
+            <i class="not-italic text-pink-400"></i> alguns certificados 
           </p>
           <h2 class="mt-3 font-display text-3xl uppercase text-white sm:text-5xl">CERTIFICADOS</h2>
         </div>
-        <div class="reveal mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="reveal mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-2">
           <div
-            class="flex flex-col items-start gap-3 rounded-2xl bg-[#28272f] p-6 transition hover:-translate-y-1 hover:border-blue-400/50">
-            <span class="text-3xl">🎓</span>
-            <h3 class="font-bold">HTML &amp; CSS</h3>
-            <p class="text-sm text-[#9b97a5]">Curso online</p>
-            <span
-              class="mt-auto rounded-full bg-blue-400/15 px-3 py-1 text-xs font-bold tracking-wider text-blue-400">2024</span>
+            class="flex p-12 flex-row-reverse items-center justify-center gap-10 rounded-2xl bg-[#28272f]  transition hover:-translate-y-1 hover:border-blue-400/50">
+            <img class="h-35 w-35 flex-none rounded-xl object-cover"
+              src="./img/nodejs.webp" alt="Certificado de HTML e CSS" loading="lazy">
+            <div class="flex min-w-0 flex-col items-start gap-2">
+              <span
+                class="reveal inline-block -rotate-3 rounded-full bg-blue-400 px-5 py-1.5 font-display text-xs uppercase tracking-widest text-[#14131a]">
+                OIIIIEEE
+              </span>
+              <div>
+                <p>CURSO: REACT  </p>
+                <p>TEMPO DE CURSO: 30HRS</p>
+              </div>
+              <h3 class="font-bold">HTML &amp; CSS</h3>
+              <p class="text-sm text-[#9b97a5]">Curso online</p>
+              
+            </div>
           </div>
           <div
-            class="flex flex-col items-start gap-3 rounded-2xl bg-[#28272f] p-6 transition hover:-translate-y-1 hover:border-blue-400/50">
-            <span class="text-3xl">📜</span>
-            <h3 class="font-bold">JavaScript</h3>
-            <p class="text-sm text-[#9b97a5]">Curso online</p>
-            <span
-              class="mt-auto rounded-full bg-blue-400/15 px-3 py-1 text-xs font-bold tracking-wider text-blue-400">2024</span>
+            class="flex p-12 flex-row-reverse items-center justify-center gap-10 rounded-2xl bg-[#28272f] transition hover:-translate-y-1 hover:border-blue-400/50">
+            <img class="h-35 w-35 flex-none rounded-xl object-cover"
+              src="./img/react.webp" alt="Certificado de HTML e CSS" loading="lazy">
+            <div class="flex min-w-0 flex-col items-start gap-2">
+              <span
+                class="reveal inline-block -rotate-3 rounded-full bg-blue-400 px-5 py-1.5 font-display text-xs uppercase tracking-widest text-[#14131a]">
+                OIIIIEEE
+              </span>
+              <div>
+                <p>CURSO: REACT  </p>
+                <p>TEMPO DE CURSO: 30HRS</p>
+              </div>
+              <h3 class="font-bold">HTML &amp; CSS</h3>
+              <p class="text-sm text-[#9b97a5]">Curso online</p>
+              
+            </div>
           </div>
           <div
-            class="flex flex-col items-start gap-3 rounded-2xl bg-[#28272f] p-6 transition hover:-translate-y-1 hover:border-blue-400/50">
-            <span class="text-3xl">🎓</span>
-            <h3 class="font-bold">React</h3>
-            <p class="text-sm text-[#9b97a5]">Curso online</p>
-            <span
-              class="mt-auto rounded-full bg-blue-400/15 px-3 py-1 text-xs font-bold tracking-wider text-blue-400">2025</span>
+            class="flex p-12 flex-row-reverse items-center justify-center gap-10 rounded-2xl bg-[#28272f] transition hover:-translate-y-1 hover:border-blue-400/50">
+            <img class="h-35 w-35 flex-none rounded-xl object-cover"
+              src="./img/uiux.webp" alt="Certificado de HTML e CSS" loading="lazy">
+            <div class="flex min-w-0 flex-col items-start gap-2">
+              <span
+                class="reveal inline-block -rotate-3 rounded-full bg-blue-400 px-5 py-1.5 font-display text-xs uppercase tracking-widest text-[#14131a]">
+                OIIIIEEE
+              </span>
+              <div>
+                <p>CURSO: REACT  </p>
+                <p>TEMPO DE CURSO: 30HRS</p>
+              </div>
+              <h3 class="font-bold">HTML &amp; CSS</h3>
+              <p class="text-sm text-[#9b97a5]">Curso online</p>
+              
+            </div>
           </div>
           <div
-            class="flex flex-col items-start gap-3 rounded-2xl bg-[#28272f] p-6 transition hover:-translate-y-1 hover:border-blue-400/50">
-            <span class="text-3xl">📜</span>
-            <h3 class="font-bold">UI Design</h3>
-            <p class="text-sm text-[#9b97a5]">Curso online</p>
-            <span
-              class="mt-auto rounded-full bg-blue-400/15 px-3 py-1 text-xs font-bold tracking-wider text-blue-400">2025</span>
+            class="flex p-12 flex-row-reverse items-center justify-center gap-10 rounded-2xl bg-[#28272f] transition hover:-translate-y-1 hover:border-blue-400/50">
+            <img class="h-35 w-35 flex-none rounded-xl object-cover"
+              src="./img/fullstackdeveloper.webp" alt="Certificado de HTML e CSS" loading="lazy">
+            <div class="flex min-w-0 flex-col items-start gap-2">
+              <span
+                class="reveal inline-block -rotate-3 rounded-full bg-blue-400 px-5 py-1.5 font-display text-xs uppercase tracking-widest text-[#14131a]">
+                OIIIIEEE
+              </span>
+              <div>
+                <p>CURSO: REACT  </p>
+                <p>TEMPO DE CURSO: 30HRS</p>
+              </div>
+              <h3 class="font-bold">HTML &amp; CSS</h3>
+              <p class="text-sm text-[#9b97a5]">Curso online</p>
+            </div>
           </div>
         </div>
       </div>
@@ -576,38 +573,64 @@
         <a href="mailto:seuemail@exemplo.com"
           class="mt-8 inline-flex items-center gap-2 rounded-full bg-blue-400 px-8 py-4 text-lg font-bold text-[#14131a] transition hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(96,165,250,.35)]">me
           manda um e-mail</a>
-        <div class="mt-10 flex justify-center gap-4">
-          <a href="#" aria-label="GitHub"
-            class="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 text-[#9b97a5] transition hover:-translate-y-0.5 hover:border-pink-400 hover:bg-pink-400 hover:text-[#14131a]">
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.78 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.78 1.05.78 2.12v3.14c0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z" />
-            </svg>
-          </a>
-          <a href="#" aria-label="LinkedIn"
-            class="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 text-[#9b97a5] transition hover:-translate-y-0.5 hover:border-pink-400 hover:bg-pink-400 hover:text-[#14131a]">
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z" />
-            </svg>
-          </a>
-          <a href="#" aria-label="Instagram"
-            class="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 text-[#9b97a5] transition hover:-translate-y-0.5 hover:border-pink-400 hover:bg-pink-400 hover:text-[#14131a]">
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              aria-hidden="true">
-              <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" />
-              <circle cx="12" cy="12" r="4.5" />
-              <circle cx="17.8" cy="6.2" r="1.2" fill="currentColor" stroke="none" />
-            </svg>
-          </a>
-        </div>
       </div>
     </section>
   </main>
 
   <footer class="border-t border-white/10 py-8 text-center text-sm text-[#9b97a5]">
-    © 2026 Nicole Vale — feito com 💜
+    <div class="max-w-7xl mx-auto space-y-4">
+      <div class="footer-bar flex h-[76px] overflow-hidden rounded-[30px] bg-[#28272f]">
+        <div class="footer-bar-label flex w-xs items-center justify-center bg-[#fee073]">
+          <span class="text-[17px] font-black tracking-wide text-[#19181e]">
+            CONECTE-SE COMIGO
+          </span>
+        </div>
+        <div class="footer-bar-content flex flex-1 items-center justify-center gap-8 px-8">
+          <span class="text-[14px] font-medium text-[#aaa9b5] uppercase">
+            Vamos criar algo juntos?
+            Estou aberta a oportunidades, projetos e novas conexões na área de tecnologia.
+          </span>
+        </div>
+      </div>
+
+      <div class="footer-bar flex h-[64px] overflow-hidden rounded-[30px] bg-[#28272f]">
+        <div class="footer-bar-label flex w-xs items-center justify-center bg-[#e2c1ff]">
+          <span class="text-[17px] font-black tracking-wide text-[#19181e]">
+            MINHAS REDES
+          </span>
+        </div>
+        <div class="footer-bar-content flex flex-1 items-center justify-center px-10">
+          <div class="flex items-center gap-5 text-[14px] font-bold text-white">
+            <a href="#" aria-label="Instagram"
+              class="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 text-[#9b97a5] transition hover:-translate-y-0.5 hover:border-pink-400 hover:bg-pink-400 hover:text-[#14131a]">
+              <i class="bx bxl-instagram text-[18px] leading-none" aria-hidden="true"></i>
+            </a>
+            <span class="text-[#777680]">·</span>
+            <a href="#" aria-label="TikTok"
+              class="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 text-[#9b97a5] transition hover:-translate-y-0.5 hover:border-pink-400 hover:bg-pink-400 hover:text-[#14131a]">
+              <i class="bx bxl-tiktok text-[18px] leading-none" aria-hidden="true"></i>
+            </a>
+            <span class="text-[#777680]">·</span>
+            <a href="#" aria-label="GitHub"
+              class="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 text-[#9b97a5] transition hover:-translate-y-0.5 hover:border-pink-400 hover:bg-pink-400 hover:text-[#14131a]">
+              <i class="bx bxl-github text-xl leading-none" aria-hidden="true"></i>
+            </a>
+            <span class="text-[#777680]">·</span>
+            <a href="#" aria-label="LinkedIn"
+              class="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 text-[#9b97a5] transition hover:-translate-y-0.5 hover:border-pink-400 hover:bg-pink-400 hover:text-[#14131a]">
+              <i class="bx bxl-linkedin-square text-xl leading-none" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="pt-2 text-[13px] font-medium tracking-wide">
+        © 2026 Nicole Vale — feito com 💜
+      </p>
+    </div>
   </footer>
+  
 
   <script>
     function initMarquee(viewport) {
@@ -643,7 +666,7 @@
           inertia *= Math.exp(-4 * dt);
         } else {
           inertia = 0;
-          if (!reduced) offset += speed * dt;
+          if (!reduced && !viewport.classList.contains('paused')) offset += speed * dt;
         }
         wrap();
         apply();
@@ -654,6 +677,7 @@
       let dragging = false, startX = 0, startOffset = 0, lastX = 0, lastT = 0;
 
       viewport.addEventListener('pointerdown', (e) => {
+        if (e.target.closest('a')) return;
         dragging = true;
         startX = lastX = e.clientX;
         startOffset = offset;
@@ -686,6 +710,9 @@
       viewport.addEventListener('pointerup', stopDragging);
       viewport.addEventListener('pointercancel', stopDragging);
 
+      viewport.addEventListener('pointerenter', () => viewport.classList.add('paused'));
+      viewport.addEventListener('pointerleave', () => viewport.classList.remove('paused'));
+
       apply();
       if (!reduced) raf = requestAnimationFrame(tick);
     }
@@ -713,7 +740,22 @@
         }
       });
     }, { threshold: .12 });
-    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    document.querySelectorAll('.reveal').forEach((el) => {
+      const siblings = [...el.parentElement.children].filter((c) => c.classList.contains('reveal'));
+      const idx = siblings.indexOf(el);
+      if (idx > 0) el.style.transitionDelay = Math.min(idx * 90, 450) + 'ms';
+      io.observe(el);
+    });
+
+
+    const progress = document.getElementById('scroll-progress');
+    const updateProgress = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      progress.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+    };
+    addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
   </script>
 </body>
 
